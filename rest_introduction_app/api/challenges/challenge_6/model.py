@@ -5,8 +5,6 @@ from typing import List
 from pydantic import BaseModel
 from starlette.exceptions import HTTPException
 
-pocket_items = ["map", "knife", "torch", "matches", "lighter", "compass"]
-
 
 class Item(str, enum.Enum):
     map = "map"
@@ -30,6 +28,7 @@ class ItemModel(BaseModel):
 class ReplaceItemModel(BaseModel):
     item_to_unpack: Item
     item_to_pack: Item
+
 
 @dataclass
 class Storage:
